@@ -32,17 +32,15 @@ class RailwayStationsController < ApplicationController
   # PATCH/PUT /railway_stations/1
   # PATCH/PUT /railway_stations/1.json
   def update
-    # respond_to do |format|
-    #   if @railway_station.update(railway_station_params)
-    #     format.html { redirect_to @railway_station, notice: 'Railway station was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @railway_station }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @railway_station.errors, status: :unprocessable_entity }
-    #   end
-    # end
-
-    render  text: params  
+    respond_to do |format|
+      if @railway_station.update(railway_station_params)
+        format.html { redirect_to @railway_station, notice: 'Railway station was successfully updated.' }
+        format.json { render :show, status: :ok, location: @railway_station }
+      else
+        format.html { render :edit }
+        format.json { render json: @railway_station.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /railway_stations/1
