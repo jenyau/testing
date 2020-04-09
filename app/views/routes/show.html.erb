@@ -5,5 +5,11 @@
   <%= @route.name %>
 </p>
 
+<p>
+  <strong>Stations in the route:</strong><br>
+  <% @route.railway_stations.each do |station| %>
+  <%= station.title %><br>
+  <% end %>
+
 <%= link_to 'Изменить', edit_route_path(@route) %> |
 <%= link_to 'Назад', routes_path %>
