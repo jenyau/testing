@@ -1,12 +1,12 @@
-class Admin::TrainsController < Admin::BaseController
+class TrainsController < ApplicationController
   before_action :set_train, only: [:show, :edit, :update, :destroy]
-
-
+  
+  
   def index
     @trains = Train.all
   end
-
-  def show
+  
+  def show 
   end
 
   def new
@@ -29,7 +29,7 @@ class Admin::TrainsController < Admin::BaseController
   def update
     if @train.update(train_params)
       redirect_to @train
-    else
+    else 
       render :edit
     end
   end

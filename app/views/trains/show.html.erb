@@ -14,21 +14,5 @@
   <% end %>
 </p>
 
-<p>
-  <% if @train.carriages.empty? %>
-    Нет присоединенных вагонов
-  <% else %>
-    <% @train.carriages.each do |carriage| %>
-      <ul>
-        <li><%= link_to "Вагон №#{carriage.number}", carriage  %></li>
-      </ul>
-    <% end %>
-  <% end %>
-</p>
-
-
-
-<p><%= link_to "Добавить вагон", new_train_carriage_path(@train) %></p> 
-
 <%= link_to 'Редактировать', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>
