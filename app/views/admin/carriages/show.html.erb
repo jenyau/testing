@@ -1,0 +1,23 @@
+<h1>Вагон №<%= @carriage.number %></h1>
+
+<p>
+  Прицеплен к поезду №<%= @carriage.train.number %>
+</p>
+<p>
+  Верхних мест:<%= @carriage.top_seats %>
+</p>
+
+<p>
+  Нижних мест:<%= @carriage.bottom_seats %>
+</p>
+
+<p>
+  Боковых верхних мест:<%= @carriage.side_top_seats %>
+</p>
+
+<p>
+  Боковых нижних мест:<%= @carriage.side_bottom_seats %>
+</p>
+
+<%= link_to "Редактировать", edit_carriage_path %>
+<%= link_to "Назад", @carriage.train %>
